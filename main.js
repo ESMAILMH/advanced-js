@@ -3,27 +3,50 @@ function getAllposts() {
     request.open('GET', 'https://jsonplaceholder.typicode.com/posts', true);
     request.responseType = 'json';
     request.send();
-    
-   request.onload = function() {
+
+    request.onload = function () {
         if (request.status >= 200 && request.status < 400) {
-            
-            let output = '';
-            let userNo='';
-            request.response.forEach(function(post) {
+            let posts = request.response;
+            document.getElementById('posts').innerHTML = '';
+            for (post of posts) {
+                let output = '';
                 output += `<div class="post">
                             <h2>${post.title}</h2>
                             <p>${post.body}</p>
                            </div>`;
-                userNo += `<div class="users" id="users">
-                    <h3>${post.userId}</h3>
-                    <h3>${post.userId}@alrahil.com</h3>
-                </div>`;
-            });
+                document.getElementById('posts').innerHTML += output;
+            };
             document.getElementById('posts').innerHTML = output;
-            document.getElementById('users').innerHTML = userNo;
         } else {
             console.error('Error fetching posts');
         }
     }
 }
 getAllposts();
+
+
+function getUserInfo() {
+    let request = new XMLHttpRequest();
+    request.open('GET', 'https://jsonplaceholder.typicode.com/users', true);
+    request.responseType = 'json';
+    request.send();
+
+    request.onload = function () {
+        if (request.status >= 200 && request.status < 400) {
+            let users = request.response;
+            document.getElementById('users').innerHTML = '';
+            for (user of users) {
+                let output = '';
+                output += `<div class="user">
+                            <h3>${user.name}</h3>
+                            <p>Email: ${user.email}</p>
+                            <p>Phone: ${user.phone}</p>
+                           </div>`;
+                document.getElementById('users').innerHTML += output;
+            }
+        } else {
+            console.error('Error fetching posts');
+        }
+    }
+}
+getUserInfo();
