@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>مخطط جانت الزمني للمشروع</title>
+  <script src="https://cdn.jsdelivr.net/npm/frappe-gantt/dist/frappe-gantt.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/frappe-gantt/dist/frappe-gantt.css">
+  <style>
+    body {
+      direction: rtl;
+      font-family: 'Arial', sans-serif;
+      padding: 20px;
+      background: #f9f9f9;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    #gantt {
+      overflow-x: auto;
+      border: 1px solid #ddd;
+      background: white;
+      border-radius: 8px;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h2>مخطط جانت الزمني لمراحل تنفيذ المشروع وفق نموذج الشلال</h2>
+  <div id="gantt"></div>
+
+  <script>
+    const tasks = [
+      {
+        id: '1',
+        name: 'جمع وتوثيق المتطلبات',
+        start: '2024-08-01',
+        end: '2024-08-20',
+        progress: 0
+      },
+      {
+        id: '2',
+        name: 'تحليل النظام',
+        start: '2024-08-21',
+        end: '2024-09-16',
+        progress: 0
+      },
+      {
+        id: '3',
+        name: 'تصميم النظام والواجهات',
+        start: '2024-09-19',
+        end: '2024-10-17',
+        progress: 0
+      },
+      {
+        id: '4',
+        name: 'تنفيذ النظام (البرمجة)',
+        start: '2024-10-18',
+        end: '2025-01-10',
+        progress: 0
+      },
+      {
+        id: '5',
+        name: 'اختبار النظام',
+        start: '2025-01-11',
+        end: '2025-01-29',
+        progress: 0
+      },
+      {
+        id: '6',
+        name: 'التحسين والتعديلات النهائية',
+        start: '2025-01-30',
+        end: '2025-02-18',
+        progress: 0
+      },
+      {
+        id: '7',
+        name: 'إعداد الوثائق والتوصيات',
+        start: '2025-02-19',
+        end: '2025-03-15',
+        progress: 0
+      }
+    ];
+
+    const gantt = new Gantt("#gantt", tasks, {
+      language: 'ar',
+      custom_popup_html: null
+    });
+  </script>
+</body>
+</html>

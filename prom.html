@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="title1" style="visibility: hidden;">Prometheus 1</h1>
+    <h1 id="title2" style="visibility: hidden;">Prometheus 2</h1>
+    <h1 id="title3" style="visibility: hidden;">Prometheus 3</h1>
+    <h1 id="title4" style="visibility: hidden;">Prometheus 4</h1>
+    <h1 id="title5" style="visibility: hidden;">Prometheus 5</h1>
+    <h1 id="title6" style="visibility: hidden;">Prometheus 6</h1>
+</body>
+<script>
+    // document.getElementById("title1").style.visibility = "visible";
+    // document.getElementById("title2").style.visibility = "visible";
+    // document.getElementById("title3").style.visibility = "visible";
+    // document.getElementById("title4").style.visibility = "visible";
+    // document.getElementById("title5").style.visibility = "visible";
+    // document.getElementById("title6").style.visibility = "visible";
+    // setTimeout(function() {
+    //     document.getElementById("title4").style.visibility = "hidden";
+    // }, 5000);
+
+    let pro =new Promise(function (resolve, reject) {
+        console.log("start");
+        let isSuccess = true;
+        if (isSuccess) {
+            resolve();
+        } else {
+            reject();
+        }
+    });
+
+console.log("before then and catch");
+    
+pro.then(function () {
+        console.log("calling then");
+    }).catch(function () {
+        console.log("calling catch");
+    });
+console.log("after catch");
+</script>
+
+</html>

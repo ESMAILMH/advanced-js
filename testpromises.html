@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="title1" style="visibility: hidden;">Prometheus 1</h1>
+    <h1 id="title2" style="visibility: hidden;">Prometheus 2</h1>
+    <h1 id="title3" style="visibility: hidden;">Prometheus 3</h1>
+    <h1 id="title4" style="visibility: hidden;">Prometheus 4</h1>
+    <h1 id="title5" style="visibility: hidden;">Prometheus 5</h1>
+    <h1 id="title6" style="visibility: hidden;">Prometheus 6</h1>
+</body>
+<script>
+    let p = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            document.getElementById("title1").style.visibility = "visible";
+        }, 4000);
+    }).then(()=>{
+        setTimeout(() => {
+            document.getElementById("title2").style.visibility = "visible";
+        }, 4000);
+    })
+</script>
+
+</html>
