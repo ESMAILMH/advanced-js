@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=DM+Serif+Display:ital@0;1&family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --font-size: 16px;
+    --font-family: 'cairo', sans-serif;
+    --background-color: #020024;
+    --text-color: #fffcf2;
+    --accent-color: #ccc5b9;
+    --button-color: #eb5e28;
+    --secondary-color: #d44f1c;
+    --border-radius: 8px;
+    --shadow-color: rgba(0, 0, 0, 0.2);
+    --transition-duration: 0.3s;
+    --header-height: 60px;
+    --footer-height: 60px;
+}
+
+body {
+    font-size: var(--font-size);
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    display: flex;
+    min-height: 100vh;
+}
+
+.container {
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.title {
+    margin-bottom: 20px;
+    width: 90vw;
+    border-bottom: #d44f1c 2px solid;
+    height: fit-content;
+
+}
+
+.title-city {
+    font-size: 1.7rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.dateday {
+    font-size: 1.2rem;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* card */
+/* From Uiverse.io by bhaveshxrawat */
+.praytime {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 20px;
+    background-color: var(--background-color);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+    margin-top: 20px;
+    flex: 1 1 auto;
+}
+
+.card {
+    width: 100%;
+    min-width: 0;
+    height: auto;
+    background: #07182E;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    place-content: center;
+    place-items: center;
+    overflow: hidden;
+    border-radius: 20px;
+    flex: 1 1 0;
+}
+
+.card h2 {
+    z-index: 1;
+    color: white;
+    font-size: 2em;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    width: 100px;
+    background-image: linear-gradient(180deg, rgb(0, 183, 255), rgb(255, 48, 255));
+    height: 130%;
+    animation: rotBGimg 3s linear infinite;
+    transition: all 0.2s linear;
+}
+
+@keyframes rotBGimg {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.card::after {
+    content: '';
+    position: absolute;
+    background: #07182E;
+    ;
+    inset: 5px;
+    border-radius: 15px;
+}
+
+
+
+.card:hover::after {
+    background: var(--button-color);
+    transition: all 0.3s ease;
+}
+
+.card:hover:before {
+    background-image: linear-gradient(180deg, rgb(81, 255, 0), #f80000);
+    animation: rotBGimg 3.5s linear infinite;
+
+}
+
+/* end card */
+
+/* paste button */
+.paste-button {
+    position: relative;
+    display: block;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.button {
+    background-color: var(--button-color);
+    color: #212121;
+    padding: 10px 15px;
+    font-size: 15px;
+    font-weight: bold;
+    border: 2px solid transparent;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    font-size: 13px;
+    position: absolute;
+    z-index: 1;
+    min-width: 200px;
+    background-color: #212121;
+    border: 2px solid var(--button-color);
+    border-radius: 0px 15px 15px 15px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-content a {
+    color: var(--button-color);
+    padding: 8px 10px;
+    text-decoration: none;
+    display: block;
+    transition: 0.1s;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--button-color);
+    color: #212121;
+}
+
+.dropdown-content a:focus {
+    background-color: #212121;
+    color: var(--button-color);
+}
+
+.dropdown-content #top:hover {
+    border-radius: 0px 13px 0px 0px;
+}
+
+.dropdown-content #bottom:hover {
+    border-radius: 0px 0px 13px 13px;
+}
+
+.paste-button:hover button {
+    border-radius: 15px 15px 0px 0px;
+}
+
+.paste-button:hover .dropdown-content {
+    display: block;
+}
+
+/* end paste button */
