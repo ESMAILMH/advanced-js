@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../prayTime/node_modules/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <h2>Hello World</h2>
+    <script>
+        axios.post('https://reqres.in/api/login', {
+            "email": "charles.morris@reqres.in",
+            "password": "pistol"
+        })
+            .then(response => console.log(response.data))
+            .catch(error => console.log(error));
+    </script>
+</body>
+
+</html>
